@@ -1,0 +1,26 @@
+.app-header {
+  display: inline-flex;
+  justify-content: space-between;
+  height: 100px;
+  width: 100%;
+  border-bottom: 5px solid rgba(0, 0, 0, 0.1);
+}
+
+.app-header__nav {
+  display: inline-flex;
+}
+
+.app-header__link {
+  height: 30px;
+  width: 130px;
+  text-decoration: none;
+  color: black;
+  margin: 15px;
+}
+
+.app-header__button {
+  width: 70px;
+  height: 70px;
+  padding: 0;
+  border-radius: 50%;
+}
