@@ -6,6 +6,7 @@ import { HomePage } from "./pages/HomePage";
 import { reducer } from "./store/reducer";
 import { initialState } from "./store/state";
 import { NotePage } from "./pages/NotePage";
+import { NoteItemPage } from "./pages/NoteItemPage";
 
 function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
@@ -14,6 +15,7 @@ function App() {
       <Router>
         <Route exact path="/" component={HomePage} />
         <Route exact path="/folders/:id" component={NotePage} />
+        <Route exact path="/notes/:id" component={NoteItemPage} />
       </Router>
     </StoreContext.Provider>
   );

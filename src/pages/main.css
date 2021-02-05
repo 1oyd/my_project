@@ -1,0 +1,21 @@
+.notePage__button {
+  background-color: white;
+  background-image: url(../components/Notes/image/icons8-добавить-файл-64.png);
+  height: 64px;
+  width: 64px;
+  border: none;
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+}
+
+.noteItemPage__button {
+  background-color: white;
+  background-image: url(../components/Notes/image/icons8-добавить-список-64.png);
+  height: 64px;
+  width: 64px;
+  border: none;
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+}

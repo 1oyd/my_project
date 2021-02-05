@@ -18,9 +18,15 @@
   margin: 15px;
 }
 
+.app-header__link:hover {
+  text-decoration: none;
+  color: black;
+}
+
 .app-header__button {
-  width: 70px;
-  height: 70px;
-  padding: 0;
-  border-radius: 50%;
+  background-image: url(../Folders/image/icons8-добавить-папку-64.png);
+  width: 64px;
+  height: 64px;
+  border: none;
+  background-color: white;
 }

@@ -1,0 +1,21 @@
+.notes__list {
+  display: inline-flex;
+  flex-wrap: wrap;
+}
+
+.notes__item {
+  margin: 20px;
+  padding: 15px;
+  width: 150px;
+  height: 150px;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: #f8f8b8;
+  color: black;
+  word-wrap: break-word;
+}
+
+.notes__item:hover {
+  text-decoration: none;
+  color: black;
+}

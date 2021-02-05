@@ -1,21 +1,21 @@
 import { useState } from "react";
 import { CreateNoteModal } from "../components/Notes/CreateNoteModal";
 import { Button } from "../components/Button";
-import { NotesList } from "../components/Notes/NotesList";
+import { NotesItems } from "../components/Notes/NotesItems";
 
 import "./main.css";
 
 const { AppHeader } = require("../components/AppHeader");
 
-function NotePage() {
+function NoteItemPage() {
   const [modalOpened, setModalOpened] = useState(false);
   return (
     <div>
       <AppHeader />
-      <NotesList />
+      <NotesItems />
       <div>
         <Button
-          className="notePage__button"
+          className="noteItemPage__button"
           onClick={() => setModalOpened(!modalOpened)}
         ></Button>
       </div>
@@ -24,4 +24,4 @@ function NotePage() {
   );
 }
 
-export { NotePage };
+export { NoteItemPage };

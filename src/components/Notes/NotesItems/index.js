@@ -1,15 +1,15 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
-/* import { Button } from "../../Button";
-import * as types from "../../../store/actions"; */
+
+import { Button } from "../../Button";
+import * as types from "../../../store/actions";
 
 import { StoreContext } from "../../../store";
 
 import "./main.css";
 
-function NotesList() {
-  const { state /* dispatch */ } = useContext(StoreContext);
-  /* const editNote = (note) => {
+function NotesItems() {
+  const { state, dispatch } = useContext(StoreContext);
+  const editNote = (note) => {
     dispatch({
       type: types.EDIT_NOTE,
       payload: note,
@@ -22,28 +22,28 @@ function NotesList() {
         id,
       },
     });
-  }; */
+  };
   return (
     <div className="container">
       <ul className="notes__list">
         {state.notes.map((note) => (
-          <Link
+          <div
             key={note.id}
             to={`/notes/${note.title}`}
             className="notes__item"
           >
             {note.title}
-            {/* <Button className="notes__edit" onClick={editNote}>
+            <Button className="notes__edit" onClick={editNote}>
               Edit
             </Button>
             <Button className="notes__delete" onClick={deleteNote}>
               Delete
-            </Button> */}
-          </Link>
+            </Button>
+          </div>
         ))}
       </ul>
     </div>
   );
 }
 
-export { NotesList };
+export { NotesItems };

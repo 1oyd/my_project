@@ -20,11 +20,9 @@ function AppHeader() {
         <Button
           className="app-header__button"
           onClick={() => setModalOpened(!modalOpened)}
-        >
-          {" "}
-          Add folder{" "}
-        </Button>
+        ></Button>
       </div>
+
       {modalOpened && <CreateFolderModal handleClose={setModalOpened} />}
     </header>
   );
