@@ -2,6 +2,7 @@ import { nanoid } from "nanoid";
 import * as types from "./actions";
 
 function reducer(state, action) {
+  console.log('before', { state, action });
   switch (action.type) {
     case types.CREATE_FOLDER: {
       const folders = [...state.folders];
@@ -9,7 +10,7 @@ function reducer(state, action) {
       const title = action.payload.description;
       const folder = {
         id,
-        title,
+        title
       };
 
       folders.push(folder);
@@ -36,6 +37,7 @@ function reducer(state, action) {
       const title = action.payload.description;
       const note = {
         id,
+        folder: action.payload.folder,
         title,
       };
 
@@ -46,11 +48,12 @@ function reducer(state, action) {
     }
 
     case types.EDIT_NOTE: {
-      const { id, ...note } = action.payload;
-      const notes = [...state.notes];
-      const position = notes.findIndex((item) => item.id === id);
-
-      let currentNote = notes[position];
+      const note = action.payload;
+      const notes = state.notes;
+      /*const notes = [...state.notes];
+      const position = notes.findIndex((item) => item.id === id);*/
+      console.log({ notes, action });
+      /*let currentNote = notes[position];
       if (currentNote.id === "default") {
         currentNote.id = nanoid();
       }
@@ -60,7 +63,7 @@ function reducer(state, action) {
         ...note,
       };
 
-      notes[position] = currentNote;
+      notes[position] = currentNote;*/
 
       return {
         ...state,
@@ -79,6 +82,7 @@ function reducer(state, action) {
       return state;
     }
   }
+
 }
 function commentsReducer(state, action) {
   switch (action.type) {

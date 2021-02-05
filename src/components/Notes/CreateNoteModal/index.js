@@ -3,12 +3,14 @@ import { StoreContext } from "../../../store";
 import * as types from "../../../store/actions";
 
 import "./main.css";
+import {useLocation} from "react-router-dom";
 
 function CreateNoteModal({ handleClose }) {
   const { dispatch } = useContext(StoreContext);
 
   const [note, setNote] = useState("");
-
+  const folder = useLocation().pathname.match(/([^/]+$)/)[0];
+  console.log('CreateNoteModal', { folder });
   const handleClick = ({ target, currentTarget }) => {
     if (target === currentTarget) {
       handleClose();
@@ -21,6 +23,7 @@ function CreateNoteModal({ handleClose }) {
     dispatch({
       type: types.CREATE_NOTE,
       payload: {
+        folder,
         description: note,
       },
     });

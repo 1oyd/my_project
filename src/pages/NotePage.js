@@ -9,6 +9,7 @@ const { AppHeader } = require("../components/AppHeader");
 
 function NotePage() {
   const [modalOpened, setModalOpened] = useState(false);
+
   return (
     <div>
       <AppHeader />

@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import {Link, useLocation} from "react-router-dom";
 /* import { Button } from "../../Button";
 import * as types from "../../../store/actions"; */
 
@@ -9,6 +9,8 @@ import "./main.css";
 
 function NotesList() {
   const { state /* dispatch */ } = useContext(StoreContext);
+
+    let folder = useLocation().pathname.match(/([^/]+$)/)[0];
   /* const editNote = (note) => {
     dispatch({
       type: types.EDIT_NOTE,
@@ -26,7 +28,7 @@ function NotesList() {
   return (
     <div className="container">
       <ul className="notes__list">
-        {state.notes.map((note) => (
+        {state.notes.filter(note => note.folder === folder).map((note) => (
           <Link
             key={note.id}
             to={`/notes/${note.title}`}

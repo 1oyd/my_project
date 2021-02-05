@@ -15,7 +15,7 @@ function NotesItems() {
       payload: note,
     });
   };
-  const deleteNote = (id) => {
+  const deleteNote = (id, ...args) => {
     dispatch({
       type: types.DELETE_NOTE,
       payload: {
@@ -33,10 +33,10 @@ function NotesItems() {
             className="notes__item"
           >
             {note.title}
-            <Button className="notes__edit" onClick={editNote}>
+            <Button className="notes__edit" onClick={() => editNote(note)}>
               Edit
             </Button>
-            <Button className="notes__delete" onClick={deleteNote}>
+            <Button className="notes__delete" onClick={() => deleteNote(note?.id)}>
               Delete
             </Button>
           </div>
