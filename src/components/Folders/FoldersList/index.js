@@ -15,7 +15,8 @@ function FoldersList() {
             to={`/folders/${folder.title}`}
             className="folders__link"
           >
-            <span className="material-icons">folder</span>
+            {/* <span className="material-icons">folder</span> */}
+            <span className="folders__link--icon"></span>
             {folder.title}
           </Link>
         ))}

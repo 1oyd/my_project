@@ -14,13 +14,21 @@
   padding: 15px;
   max-width: 100px;
   text-decoration: none;
-  border: 1px solid rgba(0, 0, 0, 0.5);
-  border-radius: 5px;
   color: black;
-  background-color: #f8f8a9;
+  position: relative;
 }
 
 .folders__link:hover {
   text-decoration: none;
   color: black;
+}
+
+.folders__link--icon::before {
+  content: "";
+  background: url("../image/icons8-папка-документов-64.png") center no-repeat;
+  width: 111px;
+  height: 111px;
+  position: absolute;
+  left: -75px;
+  top: -30px;
 }

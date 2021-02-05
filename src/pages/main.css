@@ -19,3 +19,14 @@
   right: 10px;
   bottom: 10px;
 }
+
+.app-header__button {
+  background-image: url(../components//Folders/image/icons8-добавить-папку-64.png);
+  width: 64px;
+  height: 64px;
+  border: none;
+  background-color: white;
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+}
