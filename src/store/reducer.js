@@ -2,18 +2,15 @@ import { nanoid } from "nanoid";
 import * as types from "./actions";
 
 function reducer(state, action) {
-  console.log('before', { state, action });
   switch (action.type) {
     case types.CREATE_FOLDER: {
       const folders = [...state.folders];
       const id = nanoid();
       const title = action.payload.description;
-      const folder = {
-        id,
-        title
-      };
 
-      folders.push(folder);
+      if (folders.find((folder) => folder.title === title))
+        alert("Folder with the same title is exists");
+      else folders.push({ id, title });
 
       return {
         ...state,
@@ -48,11 +45,11 @@ function reducer(state, action) {
     }
 
     case types.EDIT_NOTE: {
-      const note = action.payload;
+      /* const note = action.payload; */
       const notes = state.notes;
       /*const notes = [...state.notes];
       const position = notes.findIndex((item) => item.id === id);*/
-      console.log({ notes, action });
+
       /*let currentNote = notes[position];
       if (currentNote.id === "default") {
         currentNote.id = nanoid();
@@ -78,11 +75,25 @@ function reducer(state, action) {
       };
     }
 
+    case types.CREATE_NOTESITEM: {
+      const id = nanoid();
+      const title = action.payload.description;
+      const notesitem = {
+        id,
+        note: action.payload.note,
+        title,
+      };
+
+      return {
+        ...state,
+        notesitems: [notesitem, ...state.notesitems],
+      };
+    }
+
     default: {
       return state;
     }
   }
-
 }
 function commentsReducer(state, action) {
   switch (action.type) {

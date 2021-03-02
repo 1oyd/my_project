@@ -1,4 +1,3 @@
-import { AppHeader } from "../components/AppHeader";
 import { useState } from "react";
 import { FoldersList } from "../components/Folders/FoldersList";
 import { Button } from "../components/Button";
@@ -9,7 +8,7 @@ function HomePage() {
   const [modalOpened, setModalOpened] = useState(false);
   return (
     <div>
-      <AppHeader />
+      <div className="folders">Folders</div>
       <FoldersList />
 
       <div>

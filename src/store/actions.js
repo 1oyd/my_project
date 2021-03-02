@@ -6,5 +6,7 @@ export const CREATE_NOTE = "CREATE_NOTE";
 export const EDIT_NOTE = "EDIT_NOTE";
 export const DELETE_NOTE = "DELETE_NOTE";
 
+export const CREATE_NOTESITEM = "CREATE_NOTESITEM";
+
 export const ADD_COMMENT = "ADD_COMMENT";
 export const FETCH_COMMENTS_BY_ID = "FETCH_COMMENTS_BY_ID";

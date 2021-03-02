@@ -5,14 +5,12 @@ import { NotesList } from "../components/Notes/NotesList";
 
 import "./main.css";
 
-const { AppHeader } = require("../components/AppHeader");
-
 function NotePage() {
   const [modalOpened, setModalOpened] = useState(false);
 
   return (
     <div>
-      <AppHeader />
+      <div className="notes">Notes</div>
       <NotesList />
       <div>
         <Button

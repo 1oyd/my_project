@@ -1,4 +1,5 @@
 .app-header {
+  background-image: url(./image/background9.jpg);
   display: inline-flex;
   justify-content: space-between;
   height: 100px;
@@ -11,14 +12,19 @@
 }
 
 .app-header__link {
-  height: 30px;
-  width: 130px;
-  text-decoration: none;
-  color: black;
-  margin: 15px;
+  display: table;
+  width: auto;
+  margin: 20px;
+  padding: 10px;
+  letter-spacing: 2px;
+  background: #93b5cf;
+  border: 2px dashed rgb(110, 109, 109);
+  color: rgb(110, 109, 109);
+  box-shadow: 0 0 0 4px #cbdcea;
 }
 
 .app-header__link:hover {
   text-decoration: none;
   color: black;
+  border: 2px dashed black;
 }

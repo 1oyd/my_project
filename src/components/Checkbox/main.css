@@ -1,0 +1,31 @@
+.checkbox {
+  display: inline-flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.checkbox__view {
+  width: 25px;
+  height: 25px;
+  background: url(./image/icons8-пустой-чекбокс-10.png) center center no-repeat;
+  background-size: cover;
+}
+
+.checkbox__view:focus {
+  outline: none;
+}
+
+.checkbox__control {
+  appearance: none;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  position: absolute;
+}
+
+.checkbox__control:checked + .checkbox__view {
+  background: url(./image/icons8-отмеченный-чекбокс-10.png) center center
+    no-repeat;
+  background-size: cover;
+}

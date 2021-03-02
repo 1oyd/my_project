@@ -1,4 +1,4 @@
-import {Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { StoreContext } from "../../../store";
 
@@ -16,7 +16,6 @@ function FoldersList() {
             to={`/folders/${folder.title}`}
             className="folders__link"
           >
-            {/* <span className="material-icons">folder</span> */}
             <span className="folders__link--icon"></span>
             {folder.title}
           </Link>

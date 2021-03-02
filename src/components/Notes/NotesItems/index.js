@@ -1,5 +1,5 @@
 import { useContext } from "react";
-
+import { useLocation } from "react-router-dom";
 import { Button } from "../../Button";
 import * as types from "../../../store/actions";
 
@@ -9,12 +9,16 @@ import "./main.css";
 
 function NotesItems() {
   const { state, dispatch } = useContext(StoreContext);
-  const editNote = (note) => {
+
+  const location = useLocation().pathname;
+  const note = location.split("/")[location.split("/").length - 1];
+  /* const editNote = (note) => {
     dispatch({
       type: types.EDIT_NOTE,
       payload: note,
     });
   };
+   */
   const deleteNote = (id, ...args) => {
     dispatch({
       type: types.DELETE_NOTE,
@@ -26,21 +30,27 @@ function NotesItems() {
   return (
     <div className="container">
       <ul className="notes__list">
-        {state.notes.map((note) => (
-          <div
-            key={note.id}
-            to={`/notes/${note.title}`}
-            className="notes__item"
-          >
-            {note.title}
-            <Button className="notes__edit" onClick={() => editNote(note)}>
+        {state.notes
+          .filter((notesitem) => notesitem.note === note)
+          .map((notesitem) => (
+            <div
+              key={notesitem.id}
+              to={`/notes/${notesitem.title}`}
+              className="notes__item"
+            >
+              {notesitem.title}
+              {/* <Button className="notes__edit" onClick={editNote}>
               Edit
             </Button>
-            <Button className="notes__delete" onClick={() => deleteNote(note?.id)}>
-              Delete
-            </Button>
-          </div>
-        ))}
+            */}
+              <Button
+                className="notes__delete"
+                onClick={() => deleteNote(notesitem?.id)}
+              >
+                Delete
+              </Button>
+            </div>
+          ))}
       </ul>
     </div>
   );

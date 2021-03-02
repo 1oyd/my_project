@@ -4,23 +4,27 @@
 
 .folders__list {
   list-style: none;
-  display: flex;
-  flex-direction: column;
+  display: inline-flex;
+  flex-wrap: wrap;
+
   justify-content: center;
 }
 
 .folders__link {
-  margin: 10px;
-  padding: 15px;
-  max-width: 100px;
+  margin: 10px 40px;
+  padding: 5px 15px;
+
   text-decoration: none;
   color: black;
+  background: #e3dedc;
+  border-radius: 5px;
   position: relative;
 }
 
 .folders__link:hover {
   text-decoration: none;
   color: black;
+  background: #c0bcba;
 }
 
 .folders__link--icon::before {
@@ -29,6 +33,6 @@
   width: 111px;
   height: 111px;
   position: absolute;
-  left: -75px;
-  top: -30px;
+  left: -85px;
+  top: -45px;
 }

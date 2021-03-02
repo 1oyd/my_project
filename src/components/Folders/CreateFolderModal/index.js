@@ -1,13 +1,18 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { StoreContext } from "../../../store";
 import * as types from "../../../store/actions";
 
 import "./main.css";
 
 function CreateFolderModal({ handleClose }) {
+  const input = useRef(null);
   const { dispatch } = useContext(StoreContext);
 
   const [folder, setFolder] = useState("");
+
+  useEffect(() => {
+    input.current.focus();
+  }, []);
 
   const handleClick = ({ target, currentTarget }) => {
     if (target === currentTarget) {
@@ -30,54 +35,41 @@ function CreateFolderModal({ handleClose }) {
 
   return (
     <div className="createModal" onClick={handleClick}>
-      <div className="modal-dialog">
-        <div className="modal-content">
-          <div className="modal-header">
-            <h5 className="modal-title w-100">
-              <div className="form-group">
-                <label>Folder name</label>
-                <input
-                  className="form-control w-100"
-                  aria-describedby=""
-                  placeholder="Enter folder name"
-                  value={folder}
-                  onInput={({ target }) => setFolder(target.value)}
-                />
-                <small className="form-text text-muted">
-                  Please write your folder name here.
-                </small>
-              </div>
-            </h5>
-            <button
-              type="button"
-              className="close"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
-              <span aria-hidden="true" onClick={handleClick}>
-                &times;
-              </span>
-            </button>
-          </div>
-          <div className="modal-footer">
-            <button
-              type="button"
-              className="btn btn-primary"
-              onClick={handleSubmit}
-            >
-              Save changes
-            </button>
-            <button
-              type="button"
-              className="btn btn-secondary"
-              data-dismiss="modal"
-              onClick={handleClick}
-            >
-              Close
-            </button>
-          </div>
+      <form action="" className="postcard" onSubmit={handleSubmit}>
+        <div className="form-row">
+          <label>Folder name</label>
+          <input
+            ref={input}
+            type="text"
+            placeholder="Enter folder name"
+            value={folder}
+            onInput={({ target }) => setFolder(target.value)}
+          />
         </div>
-      </div>
+
+        <button
+          type="button"
+          className="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true" onClick={handleClick}>
+            &times;
+          </span>
+        </button>
+
+        <div>
+          <button className="modal-button">Add folder</button>
+          <button
+            type="button"
+            className="modal-button"
+            data-dismiss="modal"
+            onClick={handleClick}
+          >
+            Close
+          </button>
+        </div>
+      </form>
     </div>
   );
 }

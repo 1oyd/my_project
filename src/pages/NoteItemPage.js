@@ -5,13 +5,10 @@ import { NotesItems } from "../components/Notes/NotesItems";
 
 import "./main.css";
 
-const { AppHeader } = require("../components/AppHeader");
-
 function NoteItemPage() {
   const [modalOpened, setModalOpened] = useState(false);
   return (
     <div>
-      <AppHeader />
       <NotesItems />
       <div>
         <Button

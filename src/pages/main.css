@@ -30,3 +30,16 @@
   right: 10px;
   bottom: 10px;
 }
+
+.folders,
+.notes {
+  display: table;
+  width: auto;
+  margin: 10px auto;
+  padding: 5px;
+  letter-spacing: 2px;
+  background: #93b5cf;
+  border: 2px dashed rgb(110, 109, 109);
+  color: rgb(110, 109, 109);
+  box-shadow: 0 0 0 4px #cbdcea;
+}
